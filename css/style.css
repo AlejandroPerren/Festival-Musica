@@ -30,8 +30,8 @@ body {
     font-style: normal;
     color: var(--negro);
     font-size: 2rem;
-    
 }
+
 p {
     color: var(--negro);
     line-height: 1.5;
@@ -228,7 +228,7 @@ header{
 .bg-verde li:nth-child(odd) {
     background-color: var(--verdeClaro); /* Reemplaza #color-verde-claro con el valor real */
 }
-.calendario{
+.calendario, .boleto{
     margin:0;
     padding: 0;
     list-style: none;
@@ -241,6 +241,129 @@ header{
 .calendario span{
     font-weight: normal;
 }
+
+/*Galeria*/
+.galeria-imagenes {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+
+@media (min-width: 480px) {
+    .galeria-imagenes {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+@media (min-width: 768px) {
+    .galeria-imagenes {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+
+@media (min-width: 1080px) {
+    .galeria-imagenes {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+.galeria-imagenes img {
+    height: 100%;
+}
+
+/*Modal para Galeria*/
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de opacidad */
+    display: grid;
+    place-items: center;
+    animation: fadeIn 0.5s ease-in;
+    opacity: 1;
+    transition: opacity 0.5s ease-in; /* Para animar el cambio de opacidad */
+}
+
+.modal.fade-out {
+    opacity: 0;
+}
+
+.modal img {
+    max-width: 100rem;
+}
+
+.btn-cerrar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: white; /* Blanco */
+    border: none;
+    color: black; /* Negro */
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100%  {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100%  {
+        opacity: 0;
+    }
+}
+.modal.overflow-hidden {
+    overflow: hidden;
+}
+/*Boleteria*/
+.boleteria{
+    background-color: var(--verde);
+    width: 100%;
+    height: 100%;
+}
+.boleteria h2{
+    text-align: center;
+    color: var(--blanco);
+    font-weight: 900;
+    font-size: 7rem;
+}
+.boletos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+.contenido-boleto h3{
+    font-weight: 900;
+    color: var(--blanco);
+    font-size: 4rem;
+}
+.boleto{
+    background-color: var(--blanco);
+}
+.boleto p{
+    background-color: var(--rosa);
+    text-align: center;
+    margin-top: 0;
+    padding: 2rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+.boleto li{
+    padding: 2rem;
+}
+
+
 /*Footer*/
 footer p{
     background-color: var(--rosa);
