@@ -96,9 +96,11 @@ header{
 }
 .navegacion-principal a{
     font-size: 2.4rem;
-    a:hover, a.active{
-        color: var(--amarillo);
-    }
+    cursor: pointer;
+   
+}
+.navegacion-principal a:hover{
+    color: var(--amarillo);
 }
 
 
@@ -371,4 +373,20 @@ footer p{
     color: var(--blanco);
     text-align: center;
     margin: 0;
+}
+
+/*Extras*/
+@media (min-width: 768px) {
+    header.fixed{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%; /* Asegura que el header ocupe todo el ancho */
+        z-index: 1000; /* Para que el header esté por encima de otros elementos */
+        box-shadow: .1rem .2rem .3rem #333;
+    }    
+}
+
+.bt-amarillo{
+    color: var(--amarillo);
 }
